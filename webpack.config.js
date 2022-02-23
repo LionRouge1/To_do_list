@@ -14,6 +14,7 @@ module.exports = {
     new HtmlWebpackPlugin({
 
       title: 'Output Management',
+      template: './src/index.html'
 
     }),
 
@@ -21,5 +22,6 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    clean: true,
   },
 };
