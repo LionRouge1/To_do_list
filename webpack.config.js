@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+  mode: 'development',
   entry: {
 
     index: './src/index.js',
@@ -9,6 +10,7 @@ module.exports = {
     print: './src/print.js',
 
   },
+  devtool: 'inline-source-map',
   module: {
 
     rules: [
@@ -28,7 +30,7 @@ module.exports = {
 
     new HtmlWebpackPlugin({
 
-      title: 'Output Management',
+      title: 'Development',
       template: './src/index.html'
 
     }),
