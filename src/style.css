@@ -9,14 +9,14 @@
 main {
   background-color: #f6f6f6;
   text-align: center;
-  min-height: 100vh;
-  padding: 10%;
+  min-height: calc(100vh - 100px);
+  padding-top: 3%;
 }
 
 section {
   background-color: white;
   width: 50%;
-  margin: auto;
+  margin: 35px auto;
   box-shadow: 0 0 5px #333;
   border-radius: 0 0 10px 10px;
 }
@@ -29,15 +29,18 @@ ul > li {
   margin: 10px 0;
   height: 40px;
   border-bottom: 2px solid #f6f6f6;
+  position: relative;
 }
 
-ul div {
+ul div,
+ul label {
   width: 40px;
   display: flex;
   justify-content: center;
 }
 
-ul div > i {
+ul div > i,
+ul label > i {
   color: #333;
   opacity: 0.5;
   font-size: 14px;
@@ -47,6 +50,12 @@ ul div > i {
   width: 100%;
   justify-content: space-between;
   display: flex;
+}
+
+footer > p {
+  font-weight: bold;
+  font-size: 23px;
+  color: #333;
 }
 
 .item_form > li p {
@@ -87,10 +96,13 @@ ul div > i {
   font-weight: 500;
   cursor: default;
   border: none;
+  background-color: transparent;
 }
 
-.items li:focus {
-  background-color: rgba(255, 166, 0, 0.5);
+li[index] {
+  margin: 0;
+  height: 50px;
+  transition: 0.5s background-color;
 }
 
 .checkbox > i {
@@ -105,13 +117,22 @@ ul div > i {
   cursor: move;
 }
 
-ul div:hover i {
+.trash {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  visibility: hidden;
+  transition: 0.2s visibility;
+}
+
+ul div:hover i,
+ul label:hover i {
   opacity: 1;
 }
 
 .contain_footer {
   width: 100%;
-  height: 40px;
+  height: 50px;
   background-color: #f6f6f6;
   display: flex;
   justify-content: center;
@@ -127,4 +148,17 @@ ul div:hover i {
 #clear:hover {
   color: rgba(51, 51, 51);
   text-decoration: underline;
+}
+
+footer {
+  background: linear-gradient(#f6f6f6, #545862);
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  color: blue;
+  text-decoration: none;
 }
