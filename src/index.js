@@ -1,20 +1,34 @@
 import _ from 'lodash';
 import './style.css';
-import printMe from './print.js';
+import Icon from './submit.png';
+const list = [
+ {
+  index: 0,
+  completed: false,
+  description: 'wash the dishes'
+ },
+ {
+  index: 1,
+  completed: false,
+  description: 'complete To Do list project'
+ }
+];
 
-function component() {
- const element = document.createElement('div');
- const btn = document.createElement('button');
-
- // Lodash, now imported by this script
- element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
- btn.innerHTML = 'Click me and check the console!';
- btn.onclick = printMe;
-
- element.appendChild(btn);
-
- return element;
+const iterate = ({index, description}) => {
+ const lItem = `
+     <li index="${index}">
+      <div class="checkbox" title="Check!">
+       <i class="fas fa-stop"></i>
+      </div>
+      <input type="text" name="" id="${index}" value="${description}">
+      <div class="ellips">
+       <i class="fas fa-ellipsis-v"></i>
+      </div>
+     </li>`;
+ const [ul] = document.getElementsByClassName('items');
+ ul.insertAdjacentHTML('beforeend',lItem);
 }
 
-document.body.appendChild(component());
+list.forEach(element => {
+ iterate(element);
+});
