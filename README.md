@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Awesome Books
+# To Do list
 
-> In this project we are making a library where you can save all your favorite books!
+> This project is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete.
 
 ## Built With
 
@@ -10,7 +10,9 @@
 - Javascript
 - CSS
 ## Demo
+
 Project live [here]()
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps:
@@ -25,7 +27,7 @@ git@github.com:LionRouge1/To_do_list.git
 ```
 
 - Press Enter to create your local clone.
-- run ``cd awesome-books`
+- run ``To_do_list`
 - now you an open the project with any code editor and go live or simply open the index.html page with the browser.
 
 ### Prerequisites
