@@ -27,8 +27,8 @@ git@github.com:LionRouge1/To_do_list.git
 ```
 
 - Press Enter to create your local clone.
-- run ``cd To_do_list`
-- now you an open the project with any code editor and go live or simply open the dist/index.html page with the browser.
+- run ``cd To_do_list``
+- now you an open the project with any code editor and go live or simply open the `dist/index.html` page with the browser.
 
 ### Prerequisites
 
