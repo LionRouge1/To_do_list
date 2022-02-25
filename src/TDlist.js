@@ -13,13 +13,13 @@ export default class TDlist {
   }
 
   static displayList(TList) {
-    const iterate = ({ index, Tdescription }) => {
+    const iterate = ({ index, Tcompleted, Tdescription }) => {
       const lItem = `
     <li index="${index}">
-     <div class="checkbox" title="Check!">
-      <i class="fas fa-stop"></i>
+     <div class="checkbox" title="Check!" completed="${Tcompleted}">
+     ${(Tcompleted === false) ? `<i style="width: 14.15px;" class="fas fa-ellipsis-v"></i>` : `<i style="color:blue; border: none" class="fas fa-check"></i>` }
      </div>
-     <input type="text" class="description" id="${index}" value="${Tdescription}">
+     <input type="text" style=" text-decoration: ${(Tcompleted === false) ? `` : `line-through`};" class="description" id="${index}" value="${Tdescription}">
      <div class="ellips">
       <i class="fas fa-ellipsis-v"></i>
      </div>
@@ -68,7 +68,13 @@ export default class TDlist {
   }
 
   editTask(who, value) {
-    this.list[who].Tdescription = value;
-    this.saveList();
+    if (typeof(value) === 'string') {
+      this.list[who].Tdescription = value;
+      this.saveList();
+    } else
+    {
+      this.list[who].Tcompleted = value;
+      this.saveList();
+    }
   }
 }
