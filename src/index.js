@@ -1,5 +1,6 @@
 import './style.css';
 import TDlist from './TDlist.js';
+import { checkbox as checkBox, clearAll } from './interactive.js';
 
 if (localStorage.getItem('list') !== null) {
   const list = JSON.parse(localStorage.getItem('list'));
@@ -12,6 +13,7 @@ const getFocus = (event) => {
   const li = event.target.parentNode;
   const ellips = event.target.nextElementSibling;
   const trash = ellips.nextElementSibling;
+  event.target.style.textDecoration = 'none';
 
   li.style.backgroundColor = '#ffe24370';
   ellips.style.visibility = 'hidden';
@@ -22,6 +24,14 @@ const lostFocus = (event) => {
   const li = event.target.parentNode;
   const ellips = event.target.nextElementSibling;
   const trash = ellips.nextElementSibling;
+  const checks = event.target.previousElementSibling.getAttribute('completed');
+  
+  if (checks === 'false'){
+    event.target.style.textDecoration = '';
+  }else {
+    event.target.style.textDecoration = 'line-through';
+  }
+ 
 
   li.style.backgroundColor = '';
   ellips.style.visibility = 'visible';
@@ -67,3 +77,19 @@ trash.forEach((element) => {
     task.removeTask(Number(index));
   });
 });
+
+// checkbox
+
+const checkbox = document.querySelectorAll('.checkbox');
+
+checkbox.forEach((element) => {
+  element.addEventListener('click', function() {
+    checkBox(this);
+  })
+});
+
+// Clear all task
+
+const All =document.getElementById('clear');
+
+All.addEventListener('click', clearAll);
