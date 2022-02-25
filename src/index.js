@@ -25,13 +25,12 @@ const lostFocus = (event) => {
   const ellips = event.target.nextElementSibling;
   const trash = ellips.nextElementSibling;
   const checks = event.target.previousElementSibling.getAttribute('completed');
-  
-  if (checks === 'false'){
+
+  if (checks === 'false') {
     event.target.style.textDecoration = '';
-  }else {
+  } else {
     event.target.style.textDecoration = 'line-through';
   }
- 
 
   li.style.backgroundColor = '';
   ellips.style.visibility = 'visible';
@@ -83,13 +82,13 @@ trash.forEach((element) => {
 const checkbox = document.querySelectorAll('.checkbox');
 
 checkbox.forEach((element) => {
-  element.addEventListener('click', function() {
+  element.addEventListener('click', function () {
     checkBox(this);
-  })
+  });
 });
 
 // Clear all task
 
-const All =document.getElementById('clear');
+const All = document.getElementById('clear');
 
 All.addEventListener('click', clearAll);
