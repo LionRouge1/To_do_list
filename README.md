@@ -9,12 +9,6 @@
 - HTML
 - Javascript
 - CSS
-<<<<<<< HEAD
-## Demo
-
-Project live [here](https://lionrouge1.github.io/To_do_list/)
-=======
->>>>>>> Interactive_list
 
 ## Getting Started
 
