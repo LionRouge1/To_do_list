@@ -1,6 +1,7 @@
 import './style.css';
 import TDlist from './TDlist.js';
 import { checkbox as checkBox, clearAll } from './interactive.js';
+import dragdrop from './drag&drop.js';
 
 if (localStorage.getItem('list') !== null) {
   const list = JSON.parse(localStorage.getItem('list'));
@@ -92,3 +93,7 @@ checkbox.forEach((element) => {
 const All = document.getElementById('clear');
 
 All.addEventListener('click', clearAll);
+
+// drag/drop and sorting function
+
+dragdrop();

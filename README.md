@@ -9,9 +9,6 @@
 - HTML
 - Javascript
 - CSS
-## Demo
-
-Project live [here]()
 
 ## Getting Started
 
