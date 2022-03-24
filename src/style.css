@@ -105,13 +105,17 @@ footer > p {
 li[index] {
   margin: 0;
   height: 50px;
-  transition: 0.5s background-color;
-  background-color: white;
-  opacity: 1;
+  transition: 0.5s background;
 }
 
 .over {
-  background-color: var(--bg-color);
+  background-color: #999a9c;
+  opacity: 0.2;
+}
+
+.dragStart {
+  background-color: white;
+  opacity: 1;
 }
 
 .checkbox > i {
