@@ -13,13 +13,15 @@ export default function dragdrop() {
  }
  
  const dragOver = (e) => {
-  // console.log('Event: ', 'dragOver')
   e.preventDefault();
  }
  
  const dragEnter = (e) => {
   e.currentTarget.parentNode.classList.add('over');
-  
+ }
+ 
+ const dragLeave = (e) => {
+  e.currentTarget.parentNode.classList.remove('over');
  }
  
  const dragDrop = (e) => {
@@ -32,7 +34,9 @@ export default function dragdrop() {
 
   if (ItemStartIndex < ItemEndIndex) {
     ul.insertBefore(dragStartIndex, dragEndIndex.nextSibling);
-    const itemIndex = Object.values(items).filter((element) => {
+
+    const itemIndex = Object.values(items)
+    .filter((element) => {
       const Index = +element.getAttribute('index');
       
       if (Index > ItemStartIndex && Index <= ItemEndIndex) {
@@ -46,11 +50,14 @@ export default function dragdrop() {
       it.setAttribute('index', n);
       it.querySelector('.description').id = n;
     });
+
     dragStartIndex.setAttribute('index', ItemEndIndex);
     dragStartIndex.querySelector('.description').id = ItemEndIndex;
   }else {
     ul.insertBefore(dragStartIndex, dragEndIndex);
-    const itemIndex = Object.values(items).filter((element) => {
+
+    const itemIndex = Object.values(items)
+    .filter((element) => {
       const Index = +element.getAttribute('index');
       
       if (Index < ItemStartIndex && Index >= ItemEndIndex) {
@@ -64,26 +71,25 @@ export default function dragdrop() {
       it.setAttribute('index', n);
       it.querySelector('.description').id = n;
     });
+
     dragStartIndex.setAttribute('index', ItemEndIndex);
     dragStartIndex.querySelector('.description').id = ItemEndIndex;
   }
-  const tableau = document.querySelectorAll('.items > li');
-  const ntableau = [];
-  tableau.forEach((ite) => {
+
+  // New array for the order 
+  
+  const table = document.querySelectorAll('.items > li');
+  const ntable = [];
+  table.forEach((ite) => {
     const task = {
       index: +ite.getAttribute('index'),
       Tcompleted: (ite.querySelector('.checkbox').getAttribute('completed') === "true") ? true : false,
       Tdescription: ite.querySelector('.description').value,
     };
-    ntableau.push(task);
+    ntable.push(task);
   });
   const tdlist = new TDlist();
-  tdlist.saveList(ntableau);
-  console.log(ntableau);
- }
- 
- const dragLeave = (e) => {
-  e.currentTarget.parentNode.classList.remove('over');
+  tdlist.saveList(ntable);
  }
 
   items.forEach((element) => {

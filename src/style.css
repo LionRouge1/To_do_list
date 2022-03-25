@@ -109,12 +109,12 @@ li[index] {
 }
 
 .over {
-  background-color: #999a9c;
+  background-color: #c8cace;
   opacity: 0.2;
 }
 
 .dragStart {
-  background-color: white;
+  background-color: rgb(253, 251, 221);
   opacity: 1;
 }
 
