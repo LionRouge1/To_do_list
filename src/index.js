@@ -97,3 +97,7 @@ All.addEventListener('click', clearAll);
 // drag/drop and sorting function
 
 dragdrop();
+
+// Reload page
+const rld = document.querySelector('.reload-icon');
+rld.addEventListener('click', () => document.location.reload());

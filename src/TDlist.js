@@ -15,7 +15,7 @@ export default class TDlist {
   static displayList(TList) {
     const iterate = ({ index, Tcompleted, Tdescription }) => {
       const lItem = `
-    <li index="${index}">
+    <li index="${index}" class="task">
      <div class="checkbox" title="Check!" completed="${Tcompleted}">
      ${(Tcompleted === false) ? '<i style="width: 14.15px;" class="fas fa-ellipsis-v"></i>' : '<i style="color:blue; border: none" class="fas fa-check"></i>'}
      </div>
