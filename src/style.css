@@ -1,6 +1,7 @@
 :root {
   --bg-color: #f6f6f6;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -9,8 +10,12 @@
   color: #545862;
 }
 
+body {
+  background-color: var(--bg-color);
+}
+
 main {
-  background-color: #f6f6f6;
+  /* background-color: #f6f6f6; */
   text-align: center;
   min-height: calc(100vh - 100px);
   padding-top: 3%;
@@ -31,7 +36,7 @@ ul > li {
   align-items: center;
   margin: 10px 0;
   height: 40px;
-  border-bottom: 2px solid #f6f6f6;
+  border-bottom: 2px solid var(--bg-color);
   position: relative;
 }
 
@@ -108,6 +113,10 @@ li[index] {
   transition: 0.5s background;
 }
 
+.task {
+  background-color: white;
+}
+
 .over {
   background-color: #c8cace;
   opacity: 0.2;
@@ -115,7 +124,6 @@ li[index] {
 
 .dragStart {
   background-color: rgb(253, 251, 221);
-  opacity: 1;
 }
 
 .checkbox > i {
@@ -146,7 +154,7 @@ ul label:hover i {
 .contain_footer {
   width: 100%;
   height: 50px;
-  background-color: #f6f6f6;
+  background-color: var(--bg-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,7 +172,7 @@ ul label:hover i {
 }
 
 footer {
-  background: linear-gradient(#f6f6f6, #545862);
+  background: linear-gradient(var(--bg-color), #545862);
   height: 100px;
   display: flex;
   justify-content: center;

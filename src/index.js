@@ -98,6 +98,6 @@ All.addEventListener('click', clearAll);
 
 dragdrop();
 
-// Reload page 
+// Reload page
 const rld = document.querySelector('.reload-icon');
 rld.addEventListener('click', () => document.location.reload());
