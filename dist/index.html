@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To do list</title>
     <script src="https://kit.fontawesome.com/84967187a9.js" crossorigin="anonymous"></script>
-<script defer src="index.bundle.js"></script><script defer src="print.bundle.js"></script></head>
+<script defer src="/To_do_list/index.bundle.js"></script></head>
 <body>
  <main>
    <h1>TO DO LIST</h1>
@@ -18,7 +18,7 @@
       </div>
      </li>
      <li>
-      <form>
+      <form id="sub_form">
        <input type="text" id="new-item" placeholder="Add to your list...">
        <div class="submit-item">
         <input type="submit" id="submit_item" value=" " title="click this or press enter to submit">
@@ -26,7 +26,7 @@
       </form>
      </li>
     </ul>
-    <ul class="items">
+    <ul class="items" id="container_items">
     <!-- list items -->
     </ul>
     <div class="contain_footer">
@@ -34,5 +34,8 @@
     </div>
    </section>
   </main>
+  <footer>
+    <p>@ 2022 made by <a href="https://github.com/LionRouge1">@LionRouge1</a></p>
+  </footer>
 </body>
 </html>
