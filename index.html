@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <script src="https://kit.fontawesome.com/84967187a9.js" crossorigin="anonymous"></script>
+<script defer src="/To_do_list/index.bundle.js"></script></head>
+<body>
+ <main>
+   <h1>TO DO LIST</h1>
+   <section class="content">
+    <ul class="item_form">
+     <li>
+      <p>Today's list</p>
+      <div class="reload-icon">
+       <i class="fas fa-sync-alt"></i>
+      </div>
+     </li>
+     <li>
+      <form id="sub_form">
+       <input type="text" id="new-item" placeholder="Add to your list...">
+       <div class="submit-item">
+        <input type="submit" id="submit_item" value=" " title="click this or press enter to submit">
+       </div>
+      </form>
+     </li>
+    </ul>
+    <ul class="items" id="container_items">
+    <!-- list items -->
+    </ul>
+    <div class="contain_footer">
+     <p id="clear">Clear all completed</p>
+    </div>
+   </section>
+  </main>
+  <footer>
+    <p>@ 2022 made by <a href="https://github.com/LionRouge1">@LionRouge1</a></p>
+  </footer>
+</body>
+</html>
