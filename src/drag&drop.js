@@ -16,11 +16,26 @@ export default function dragdrop() {
   };
 
   const dragEnter = (e) => {
-    e.currentTarget.parentNode.classList.add('over');
+    const dragEndIndex = e.currentTarget.parentNode;
+    const ItemStartIndex = +dragStartIndex.getAttribute('index');
+    const ItemEndIndex = +dragEndIndex.getAttribute('index');
+    const ul = document.getElementById('container_items');
+    if (ItemStartIndex < ItemEndIndex) {
+      ul.insertBefore(dragStartIndex, dragEndIndex.nextSibling);
+    } else {
+      ul.insertBefore(dragStartIndex, dragEndIndex);
+    }
+    // e.currentTarget.parentNode.classList.add('over');
   };
 
   const dragLeave = (e) => {
-    e.currentTarget.parentNode.classList.remove('over');
+    const ul = document.getElementById('container_items');
+    if (dragStartIndex.previousSibling === 'undefine') {
+      ul.insertAdjacentHTML('beforebegin', dragStartIndex)
+    } else {
+      ul.insertBefore(dragStartIndex, dragStartIndex.previousSibling);
+    }
+    // e.currentTarget.parentNode.classList.remove('over');
   };
 
   const dragEnd = (e) => {
